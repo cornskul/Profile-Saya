@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+    html, body{
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+    body{
+      background:navajowhite;
+      color:#222;
+    }
+    img{
+      max-width:100%;
+      display:block;
+    }
+    header{
+      background:sandybrown;
+      color:white;
+      text-align:center;
+      padding:45px 20px;
+    }
+    header h1{
+      font-size:52px;
+      margin-bottom:10px;
+      font-weight:bold;
+    }
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+    .profile-section{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:50px;
+      flex-wrap:wrap;
+    }
+    .profile-card{
+      background:white;
+      width:320px;
+      border-radius:20px;
+      padding:30px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      text-align:center;
+      transition:0.3s ease;
+    }
+    .profile-card:hover{
+      transform:translateY(-10px) scale(1.03);
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+    .profile-card img{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:20px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .profile-card h2{
+      font-size:26px;
+      margin-bottom:8px;
+    }
+    .profile-card .nama{
+      font-size:18px;
+      color:#444;
+      margin-bottom:20px;
+    }
+    .info{
+      text-align:left;
+      line-height:2;
+      font-size:16px;
+    }
+    .info span{
+      font-weight:bold;
+    }
+    .right-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .right-card h2{
+      margin-bottom:20px;
+    }
+    .image-box{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      width:100%;
+      align-items:center;
+    }
+    .image-box img{
+      width:100%;
+      max-width:220px;
+      height:150px;
+      object-fit:cover;
+      border-radius:15px;
+    }
+    section{
+      margin-top:70px;
+    }
+    section h2{
+      color:black;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+    section p{
+      font-size:18px;
+      line-height:1.8;
+    }
+    .table-box{
+      background:white;
+      border-radius:15px;
+      overflow-x:auto;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:600px;
+    }
+    thead{
+      background:sandybrown;
+      color:white;
+    }
+    th{
+      padding:18px;
+      font-size:18px;
+    }
+    td{
+      padding:18px;
+      text-align:center;
+      border-bottom:1px solid #ddd;
+      font-size:17px;
+    }
+    .project-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:25px;
+    }
+    .project-card{
+      background:white;
+      padding:30px;
+      border-radius:18px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+
+      transition:0.3s ease;
+    }
+    .project-card:hover{
+
+      transform:translateY(-8px) scale(1.02);
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    }
+    .project-card h3{
+      font-size:22px;
+      margin-bottom:15px;
+    }
+    .project-card p{
+      font-size:17px;
+      margin-bottom:20px;
+    }
+    .project-card button{
+      background:sandybrown;
+      color:white;
+      border:none;
+      padding:12px 22px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+    }
+    .project-card button:hover{
+      background:peru;
+    }
+    footer{
+      margin-top:70px;
+      background:sandybrown;
+      color:white;
+      text-align:center;
+      padding:20px;
+      font-size:16px;
+    }
+    @media(max-width:768px){
+
+      header h1{
+        font-size:36px;
+      }
+      header p{
+        font-size:16px;
+      }
+      .profile-card{
+        width:100%;
+        max-width:320px;
+      }
+      section h2{
+        font-size:24px;
+      }
+      td,th{
+        font-size:15px;
+        padding:14px;
+      }
+      .project-container{
+        grid-template-columns:1fr;
+      }
+    }
+    @media(max-width:480px){
+
+      header{
+        padding:35px 15px;
+      }
+      header h1{
+        font-size:28px;
+      }
+      .profile-card{
+        padding:25px;
+      }
+      .profile-card img{
+        width:110px;
+        height:110px;
+      }
+      section p{
+        font-size:16px;
+      }
+      .project-card button{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Profil Siswa Kelas XI</h1>
+    <p>Mata Pelajaran TIK</p>
+  </header>
+  <div class="container">
+    <div class="profile-section">
+      <div class="profile-card">
+        <img src="WhatsApp Image 2026-05-23 at 1.10.53 PM.jpeg">
+        <h2>Cornelius Ravelio Joaquin</h2>
+        <div class="info">
+          <p><span>Kelas:</span> XI-A3</p>
+          <p><span>Sekolah:</span> SMA Kolese Kanisius</p>
+          <p><span>Hobi:</span> Menggamba dan Menyanyi</p>
+          <p><span>Cita-cita:</span> Dokter</p>
+        </div>
+      </div>
+      <div class="profile-card right-card">
+        <h2>Gallery</h2>
+        <div class="image-box">
+          <img src="penjajah.jpeg">
+          <img src="blue.jpeg">
+        </div>
+      </div>
+    </div>
+    <section>
+      <h2>Tentang Saya</h2>
+      <p>
+        Halo semua, perkenalkan nama saya Cornelius Ravelio Joaquin, biasa dipanggil Cornel dan saat ini
+        menduduki bangku kelas 11 di SMA Kolese Kanisius. Hobi saya adalah menggambar
+        yang tentunya sudah ditekuni sejak SD. Selain menggambar, saya juga suka menyanyi,
+        maka dari itu saya tergabung dalam Persevera (komunitas paduan suara SMA Kolese Kanisius).
+        Jujur, kelas 11 ini lumayan berat karena tuntutan tugas yang semakin banyak dan rumit,
+        namun saya tetap semangat dalam menjalankan hari-hari saya.
+      </p>
+    </section>
+    <section>
+      <h2>Nilai Ulangan Semester</h2>
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Materi</th>
+              <th>Nilai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Biodata</td>
+              <td>75</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>UH Tertulis</td>
+              <td>75</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Mini Project</td>
+              <td>100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2>Project Semester Ini</h2>
+      <div class="project-container">
+        <div class="project-card">
+          <h3>Project 1</h3>
+          <p>Website Biodata</p>
+          <button onclick="lihatProject('Website Biodata Siswa')">
+            Lihat Project
+          </button>
+        </div>
+        <div class="project-card">
+          <h3>Project 2</h3>
+          <p>Website Fotografi</p>
+          <button onclick="lihatProject('Website Fotografi')">
+            Lihat Project
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    Profil Siswa Kelas X
+  </footer>
+  <script>
+    console.log("Website Profil Siswa Aktif");
+    function lihatProject(project){
+      console.log("Project dipilih:", project);
+      if(project === "Website Biodata Siswa"){
+        window.location.href = "project1.html";
+      }
+      else if(project === "Website Fotografi"){
+        window.location.href = "project2.html";
+      }
+    }
+  </script>
+</body>
+</html>
